@@ -1,0 +1,40 @@
+{% extends '/base.html.twig' %}
+
+{% block title %}Index des Biens Immobiliers
+{% endblock %}
+
+{% block body %}
+	<h1>Liste des biens immobiliers</h1>
+
+	<table class="table">
+		<thead>
+
+			<tr>
+				<th>Id</th>
+				<th>Documents</th>
+				<th>Nom du bien</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for bien_immobilier in bien_immobiliers %}
+				<tr>
+					<td>{{ bien_immobilier.id }}</td>
+					<td>{{ bien_immobilier.documents }}</td>
+					<td>{{ bien_immobilier.bienImmobilier }}</td>
+					<td>
+						<a href="{{ path('app_bien_immobilier_show', {'id': bien_immobilier.id}) }}">Voir</a>
+						</a>
+						<a href="{{ path('app_bien_immobilier_edit', {'id': bien_immobilier.id}) }}">Mettre à jour / supprimer</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="4">Aucun enregistrement trouvé</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('app_bien_immobilier_new') }}">Créer un nouveau bien immobilier</a>
+{% endblock %}

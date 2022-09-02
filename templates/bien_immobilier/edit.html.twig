@@ -1,0 +1,14 @@
+{% extends '/base.html.twig' %}
+
+{% block title %}Edit BienImmobilier
+{% endblock %}
+
+{% block body %}
+	<h1>Modifier ou supprimer Bien Immobilier</h1>
+
+	{{ include('bien_immobilier/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
+
+	<a href="{{ path('app_bien_immobilier_index') }}">Retour à la liste</a>
+
+	{{ include('bien_immobilier/_delete_form.html.twig') }}
+{% endblock %}

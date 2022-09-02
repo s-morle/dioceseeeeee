@@ -1,0 +1,32 @@
+/*Rendre le fond de couleur de la page en bleu*/
+body {
+    background-color: whitesmoke;
+}
+
+/*Créer le formulaire*/
+.card {
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.col-md-12 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/*formulaire pour reset*/
+#reset_password_request_email {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: white;
+}
+
+

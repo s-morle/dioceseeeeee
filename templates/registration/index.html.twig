@@ -1,0 +1,18 @@
+{# templates/registration/index.html.twig #}
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1 class="text-center">Site de partage d'informations interne au diocese de Pamiers
+    </h1>
+    <div class="container">
+        <div class="row">
+            <div class="bg-body rounded mx-auto card bg-light mb-3 mt-5" style="width: 800px;">
+                <div class="card-body">
+                    {{ form_start(form) }}
+                    {{ form(form) }}
+                    {{ form_end(form) }}
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

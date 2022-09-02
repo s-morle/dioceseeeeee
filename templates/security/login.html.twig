@@ -1,0 +1,45 @@
+{# templates/security/login.html.twig #}
+{% extends 'base.html.twig' %}
+{% block title %}Partage d'informations interne au diocese de Pamiers{% endblock %}
+{% block body %}
+	<img alt="Logo" src="{{ asset('logo.png') }}" width="180" height="auto" />
+	<h1 class="text-center">Site de partage d'informations interne au diocese de Pamiers</h1>
+	<div class="container">
+		<div class="row">
+			<div class=" bg-body rounded mx-auto card bg-light mb-3 mt-5" style="width: 800px;">
+				<div class="card-body">
+					<form class="form-horizontal" role="form" method="post">
+						{% if error %}
+							<div class="alert alert-danger">
+								{{ error.messageKey|trans(error.messageData, 'security') }}
+							</div>
+						{% endif %}
+						<h2 class="text-center">Connexion</h2>
+						<div class="form-group">
+							<label for="email" class="col-md-4 control-label">Adresse e-mail</label>
+							<div class="col-md-12">
+								<input id="inputEmail" type="email" class="form-control" name="email" value="{{ last_username }}" required autofocus/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-md-4 control-label">Mot de passe</label>
+							<div class="col-md-12">
+								<input id="inputPassword" type="password" class="form-control" name="password" required/>
+							</div>
+						</div>
+						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+						<div class="form-group">
+							<div class="  col-md-12">
+								<button  type="submit" class="btn btn-outline-primary float-lg-start">
+									<i class="fa fa-btn fa-sign-in"></i>
+									Se connecter
+								</button>
+								<button class="btn btn-link float-lg-start"><a href="{{ path('forgotten_password') }}">Mot de passe oublié</a></button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends '/base.html.twig' %}
+
+{% block title %}Nouveau bien immobilier
+{% endblock %}
+
+{% block body %}
+	<h1>Créer un nouveau bien immobilier</h1>
+	{{ form_start(form) }}
+	{{ include('bien_immobilier/_form.html.twig') }}
+	
+	{{ form_end(form) }}
+	<a href="{{ path('app_bien_immobilier_index') }}">Retour à la liste</a>
+{% endblock %}
